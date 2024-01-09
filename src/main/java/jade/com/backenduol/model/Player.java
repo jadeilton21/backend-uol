@@ -1,8 +1,9 @@
 package jade.com.backenduol.model;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -14,8 +15,15 @@ import lombok.Setter;
 @EqualsAndHashCode(of="id")
 public class Player {
 
+
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotBlank
     private String nome;
+    @NotBlank
+    @Email
     private String email;
     private String telefone;
     private String codiname;
