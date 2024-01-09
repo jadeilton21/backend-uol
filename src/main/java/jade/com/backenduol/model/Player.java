@@ -1,6 +1,7 @@
 package jade.com.backenduol.model;
 
 
+import jade.com.backenduol.model.dtos.PlayerDto;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -29,4 +30,11 @@ public class Player {
     private String codiname;
     private TimeTyper timeTyper;
 
+
+    public Player(PlayerDto dto) {
+        this.nome = dto.nome();
+        this.email = dto.email();
+        this.telefone = dto.telefone();
+        this.timeTyper=dto.timeTyper();
+    }
 }
