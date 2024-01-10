@@ -6,7 +6,7 @@ public record PlayerDto(
         String nome,
         String email,
         String telefone,
-        TimeTyper timeTyper
-
+        TimeTyper timeTyper,
+        String codiname
 ) {
 }
