@@ -5,14 +5,14 @@ import jade.com.backenduol.model.dtos.PlayerDto;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Entity(name="players")
 @Table(name = "players")
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode(of="id")
 public class Player {
 
@@ -36,5 +36,6 @@ public class Player {
         this.email = dto.email();
         this.telefone = dto.telefone();
         this.timeTyper=dto.timeTyper();
+        this.codiname  = dto.codiname();
     }
 }
