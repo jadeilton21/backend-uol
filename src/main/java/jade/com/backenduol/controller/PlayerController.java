@@ -10,6 +10,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/players")
 public class PlayerController {
@@ -22,4 +24,10 @@ public class PlayerController {
             return new ResponseEntity<>(newPlayer, HttpStatus.CREATED);
 
     }
+
+    @GetMapping
+    public ResponseEntity<List<Player>> getAllPlayers(){
+        return new ResponseEntity<>(service.getAllPlayers(), HttpStatus.OK);
+    }
+
 }
