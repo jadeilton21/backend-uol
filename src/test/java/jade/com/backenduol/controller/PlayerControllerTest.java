@@ -32,4 +32,9 @@ class PlayerControllerTest {
                 .isEqualTo(HttpStatus.BAD_REQUEST.value());
 
     }
+
+    @Test
+    @DisplayName("Deve Devolver Código 404 quando informações forem invalida......")
+    void getAllPlayers_cenario1() {
+    }
 }
