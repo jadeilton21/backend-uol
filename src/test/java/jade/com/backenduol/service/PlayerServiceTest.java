@@ -43,7 +43,6 @@ class PlayerServiceTest {
                 .perform(
                         post("/players")
                 ).andReturn().getResponse();
-
         assertThat(response.getStatus())
                 .isEqualTo(HttpStatus.BAD_REQUEST.value());
     }
