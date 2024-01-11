@@ -34,4 +34,17 @@ class PlayerServiceTest {
         assertThat(response.getStatus())
                 .isEqualTo(HttpStatus.BAD_REQUEST.value());
     }
+
+    @Test
+    @DisplayName("Deve Devolver Códgio Http 404 quando Informações forem invalidas..")
+    void getAllPlayers_cenario1() throws Exception{
+
+        var response = mockMvc
+                .perform(
+                        post("/players")
+                ).andReturn().getResponse();
+
+        assertThat(response.getStatus())
+                .isEqualTo(HttpStatus.BAD_REQUEST.value());
+    }
 }
