@@ -35,6 +35,14 @@ class PlayerControllerTest {
 
     @Test
     @DisplayName("Deve Devolver Código 404 quando informações forem invalida......")
-    void getAllPlayers_cenario1() {
+    void getAllPlayers_cenario1() throws Exception {
+
+        var response = mockMvc.perform(
+                post("/players")
+        ).andReturn().getResponse();
+
+
+        assertThat(response.getStatus())
+                .isEqualTo(HttpStatus.BAD_REQUEST.value());
     }
 }
