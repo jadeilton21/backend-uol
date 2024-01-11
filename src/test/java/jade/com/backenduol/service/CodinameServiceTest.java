@@ -35,4 +35,18 @@ class CodinameServiceTest {
         assertThat(response.getStatus())
                 .isEqualTo(HttpStatus.BAD_REQUEST.value());
     }
+
+    @Test
+    @DisplayName("Deve Devolver Código Http 404 quando informações forem invalidas...")
+    void loadXmlData_cenario1()throws Exception {
+
+        var response = mockMvc
+                .perform(
+                        post("/players")
+                ).andReturn().getResponse();
+
+
+        assertThat(response.getStatus())
+                .isEqualTo(HttpStatus.BAD_REQUEST.value());
+    }
 }
